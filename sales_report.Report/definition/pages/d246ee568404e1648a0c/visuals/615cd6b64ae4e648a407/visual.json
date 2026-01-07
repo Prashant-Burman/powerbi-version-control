@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
   "name": "615cd6b64ae4e648a407",
   "position": {
-    "x": 213.57434605023028,
-    "y": 90.769097071347872,
+    "x": 213.9957009792214,
+    "y": 461.00788153809413,
     "z": 0,
-    "height": 596.22838272355955,
-    "width": 808.02294255670461,
+    "height": 226.22402674946264,
+    "width": 807.06950083592073,
     "tabOrder": 0
   },
   "visual": {
@@ -67,56 +67,5 @@
       }
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "df76bbc8b63018654221",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Sales"
-              }
-            },
-            "Property": "Region"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "79063bed7bd9e69828e4",
-        "field": {
-          "Aggregation": {
-            "Expression": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "Sales"
-                  }
-                },
-                "Property": "Amount"
-              }
-            },
-            "Function": 0
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "7a803be0b7239d889505",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "Sales"
-              }
-            },
-            "Property": "OrderID"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }
