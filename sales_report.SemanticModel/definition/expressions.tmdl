@@ -1,0 +1,7 @@
+expression filepath = "C:\Users\prash\Downloads\deployment pipeline\Dev\Sales_DEV.xlsx" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
+	lineageTag: 8a9f3048-adee-4593-beda-806307e58736
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+

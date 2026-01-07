@@ -1,19 +1,19 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.4.0/schema.json",
-  "name": "615cd6b64ae4e648a407",
+  "name": "4ac2f090036310e0e1a7",
   "position": {
-    "x": 15.896823501313589,
-    "y": 443.88822545975643,
-    "z": 0,
-    "height": 226.22402674946264,
-    "width": 807.06950083592073,
-    "tabOrder": 0
+    "x": 847.42297587771679,
+    "y": 452.44805349892528,
+    "z": 2001,
+    "height": 149.18557439694291,
+    "width": 333.8332935275854,
+    "tabOrder": 2001
   },
   "visual": {
-    "visualType": "tableEx",
+    "visualType": "barChart",
     "query": {
       "queryState": {
-        "Values": {
+        "Category": {
           "projections": [
             {
               "field": {
@@ -27,22 +27,13 @@
                 }
               },
               "queryRef": "Sales.Region",
-              "nativeQueryRef": "Region"
-            },
-            {
-              "field": {
-                "Column": {
-                  "Expression": {
-                    "SourceRef": {
-                      "Entity": "Sales"
-                    }
-                  },
-                  "Property": "OrderID"
-                }
-              },
-              "queryRef": "CountNonNull(Sales.OrderID)",
-              "nativeQueryRef": "OrderID"
-            },
+              "nativeQueryRef": "Region",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
             {
               "field": {
                 "Aggregation": {
@@ -64,6 +55,23 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Sales"
+                  }
+                },
+                "Property": "Region"
+              }
+            },
+            "direction": "Ascending"
+          }
+        ]
       }
     },
     "drillFilterOtherVisuals": true
