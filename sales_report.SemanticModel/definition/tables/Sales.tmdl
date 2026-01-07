@@ -1,0 +1,42 @@
+table Sales
+	lineageTag: f63b39c4-31f8-4413-8b8a-7601ccb7c7ad
+
+	column OrderID
+		dataType: int64
+		formatString: 0
+		lineageTag: 19c959bf-fd57-42b1-bdd7-0bccca31622b
+		summarizeBy: count
+		sourceColumn: OrderID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: 519116e2-037f-4354-854c-fa4dafde6394
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Amount
+		dataType: int64
+		formatString: 0
+		lineageTag: fcfb721a-ec89-4c22-83a7-6fad3f6c6e7c
+		summarizeBy: sum
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Sales = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\prash\Downloads\deployment pipeline\Dev\Sales_DEV.xlsx"), null, true),
+				    Sales_Sheet = Source{[Item="Sales",Kind="Sheet"]}[Data],
+				    #"Promoted Headers" = Table.PromoteHeaders(Sales_Sheet, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"OrderID", Int64.Type}, {"Region", type text}, {"Amount", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+
