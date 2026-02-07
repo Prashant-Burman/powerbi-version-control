@@ -31,7 +31,11 @@ table Sales
 		mode: import
 		source =
 				let
-				    Source = Excel.Workbook(File.Contents("C:\Users\prash\Downloads\deployment pipeline\Dev\Sales_DEV.xlsx"), null, true),
+				    Source = Excel.Workbook(
+				        File.Contents(pFilePath),
+				        null,
+				        true
+				    ),
 				    Sales_Sheet = Source{[Item="Sales",Kind="Sheet"]}[Data],
 				    #"Promoted Headers" = Table.PromoteHeaders(Sales_Sheet, [PromoteAllScalars=true]),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"OrderID", Int64.Type}, {"Region", type text}, {"Amount", Int64.Type}})

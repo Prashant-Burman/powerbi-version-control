@@ -1,16 +1,15 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "be4375457951a83cfa21",
+  "name": "153b0d3f8476aee26f11",
   "position": {
-    "x": 452.44805349892528,
+    "x": 847.42297587771679,
     "y": 132.06591831860521,
-    "z": 2003,
-    "height": 238.45235251970385,
-    "width": 355.84427991401958,
-    "tabOrder": 2003
+    "z": 2004,
+    "height": 238.45235251970382,
+    "width": 333.8332935275854
   },
   "visual": {
-    "visualType": "pieChart",
+    "visualType": "donutChart",
     "query": {
       "queryState": {
         "Category": {
@@ -27,8 +26,7 @@
                 }
               },
               "queryRef": "Sales.Region",
-              "nativeQueryRef": "Region",
-              "active": true
+              "nativeQueryRef": "Region"
             }
           ]
         },
@@ -44,14 +42,14 @@
                           "Entity": "Sales"
                         }
                       },
-                      "Property": "Amount"
+                      "Property": "OrderID"
                     }
                   },
-                  "Function": 0
+                  "Function": 5
                 }
               },
-              "queryRef": "Sum(Sales.Amount)",
-              "nativeQueryRef": "Sum of Amount"
+              "queryRef": "CountNonNull(Sales.OrderID)",
+              "nativeQueryRef": "Count of OrderID"
             }
           ]
         }
@@ -60,16 +58,21 @@
         "sort": [
           {
             "field": {
-              "Column": {
+              "Aggregation": {
                 "Expression": {
-                  "SourceRef": {
-                    "Entity": "Sales"
+                  "Column": {
+                    "Expression": {
+                      "SourceRef": {
+                        "Entity": "Sales"
+                      }
+                    },
+                    "Property": "OrderID"
                   }
                 },
-                "Property": "Region"
+                "Function": 5
               }
             },
-            "direction": "Ascending"
+            "direction": "Descending"
           }
         ]
       }

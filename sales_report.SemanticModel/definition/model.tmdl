@@ -8,7 +8,7 @@ model Model
 
 annotation __PBI_TimeIntelligenceEnabled = 0
 
-annotation PBI_QueryOrder = ["Sales","filepath"]
+annotation PBI_QueryOrder = ["Sales","pFilePath"]
 
 annotation PBI_ProTooling = ["DevMode"]
 
