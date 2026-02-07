@@ -1,4 +1,4 @@
-expression pFilePath = "C:\Users\prash\Downloads\deployment pipeline\Dev\Sales_DEV.xlsx" meta [IsParameterQuery=true, Type="Any", IsParameterQueryRequired=true]
+expression pFilePath = "C:\Users\prash\Downloads\deployment pipeline\Dev\Sales_DEV.xlsx" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
 	lineageTag: 14169ffd-8e7d-4495-aa1c-257ef76b4754
 
 	annotation PBI_NavigationStepName = Navigation
