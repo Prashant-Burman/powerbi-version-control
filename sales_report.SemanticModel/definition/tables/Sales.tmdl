@@ -1,6 +1,10 @@
 table Sales
 	lineageTag: f63b39c4-31f8-4413-8b8a-7601ccb7c7ad
 
+	measure 'Total amount' = SUM(Sales[Amount])
+		formatString: 0
+		lineageTag: ddae639d-8d01-43e4-8a4b-f2c1a93130f4
+
 	column OrderID
 		dataType: int64
 		formatString: 0
